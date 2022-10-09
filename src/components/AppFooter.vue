@@ -16,7 +16,7 @@
         </div>
         <div class="app-footer__links">
           <div
-            v-for="group in fastLinkGroups"
+            v-for="group in fastLinks"
             :key="group.id"
             class="fast-link__group"
           >
@@ -68,6 +68,7 @@ import AppLogo from "./AppLogo.vue"
 import AppTextbox from "./AppTextbox.vue"
 import AppButton from "./AppButton.vue"
 import SvgIcon from "./SvgIcon.vue"
+import { mapState } from "vuex"
 
 export default {
   components: {
@@ -78,58 +79,11 @@ export default {
   },
   data() {
     return {
-      email: "",
-      //TODO: move fastLinks to store
-      fastLinkGroups: [
-        {
-          id: 1,
-          title: "CryptoKet",
-          childs: [
-            {
-              id: 1,
-              title: "Explore",
-              url: "#"
-            },
-            {
-              id: 2,
-              title: "How it Works",
-              url: "#"
-            },
-            {
-              id: 3,
-              title: "Contact Us",
-              url: "#"
-            }
-          ]
-        },
-        {
-          id: 2,
-          title: "Support",
-          childs: [
-            {
-              id: 1,
-              title: "Help Center",
-              url: "#"
-            },
-            {
-              id: 2,
-              title: "Terms of Service",
-              url: "#"
-            },
-            {
-              id: 3,
-              title: "Legal",
-              url: "#"
-            },
-            {
-              id: 4,
-              title: "Privacy Policy",
-              url: "#"
-            }
-          ]
-        }
-      ]
+      email: ""
     }
+  },
+  computed: {
+    ...mapState("app", ["fastLinks"])
   }
 }
 </script>

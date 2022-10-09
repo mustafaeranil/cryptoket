@@ -13,7 +13,7 @@
           <SvgIcon name="times" />
         </button>
       </div>
-      <AppNav class="header-fixed__nav" :navigations="navigations" />
+      <AppNav class="header-fixed__nav" :navigations="navLinks" />
       <div class="header-fixed__auth">
         <AppButton>Create</AppButton>
         <AppButton buttonStyle="stroke" class="lg:w-36">Connect</AppButton>
@@ -28,6 +28,7 @@ import SearchBox from "./SearchBox.vue"
 import SvgIcon from "./SvgIcon.vue"
 import AppNav from "./AppNav.vue"
 import AppButton from "./AppButton.vue"
+import { mapState } from "vuex"
 
 export default {
   name: "AppHeader",
@@ -40,26 +41,11 @@ export default {
   },
   data() {
     return {
-      showMobileNavbar: false,
-      //TODO: move navigations to the store
-      navigations: [
-        {
-          id: 1,
-          title: "Explore",
-          url: "#"
-        },
-        {
-          id: 2,
-          title: "My Items",
-          url: "#"
-        },
-        {
-          id: 3,
-          title: "Following",
-          url: "#"
-        }
-      ]
+      showMobileNavbar: false
     }
+  },
+  computed: {
+    ...mapState("app", ["navLinks"])
   }
 }
 </script>
