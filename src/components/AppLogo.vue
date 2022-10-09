@@ -20,7 +20,7 @@ export default {}
   }
 
   &__circle {
-    @apply h-4 w-4 rounded-full border-2 border-white dark:border-dark-200;
+    @apply h-[18px] w-[18px] rounded-full border-2 border-white dark:border-dark-200;
   }
 
   &__name {
