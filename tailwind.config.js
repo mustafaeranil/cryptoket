@@ -20,6 +20,9 @@ module.exports = {
           300: "#2A2D3A",
           400: "#24252D"
         }
+      },
+      borderRadius: {
+        "2.5xl": "20px"
       }
     }
   },
