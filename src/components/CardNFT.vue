@@ -45,10 +45,10 @@ export default {
 
 <style lang="postcss">
 .card-nft {
-  @apply inline-flex flex-col rounded-2.5xl p-3 pb-5 shadow-lg dark:bg-dark-300 dark:shadow-none;
+  @apply inline-flex flex-col rounded-lg p-3 pb-5 shadow-lg dark:bg-dark-300 dark:shadow-none lg:rounded-2.5xl;
 
   &__pic {
-    @apply mb-4 h-56 w-52 rounded-2.5xl bg-grey-100;
+    @apply mb-4 h-36 w-full rounded-lg bg-grey-100 lg:h-56 lg:rounded-2.5xl;
   }
 
   &__name {

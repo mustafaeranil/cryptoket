@@ -11,6 +11,7 @@
           :sales="seller.sales"
           :order="index + 1"
           :currency="currency"
+          :picture="seller.picture"
         />
       </div>
     </div>

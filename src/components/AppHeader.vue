@@ -82,7 +82,7 @@ export default {
 }
 
 .header-fixed {
-  @apply fixed left-0 top-0 h-screen w-screen flex-col bg-white dark:bg-dark-bg lg:static lg:flex lg:h-auto lg:w-auto lg:flex-shrink lg:flex-row;
+  @apply fixed left-0 top-0 z-10 h-screen w-screen flex-col bg-white dark:bg-dark-bg lg:static lg:flex lg:h-auto lg:w-auto lg:flex-shrink lg:flex-row;
 
   &__head {
     @apply flex justify-between border-b border-grey-100 p-5 dark:border-dark-100 lg:hidden;
