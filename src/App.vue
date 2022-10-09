@@ -20,6 +20,7 @@
         <HomeHotBids :bids="bids" />
       </div>
     </section>
+    <AppFooter />
   </div>
 </template>
 
@@ -28,13 +29,15 @@ import AppHeader from "./components/AppHeader.vue"
 import HomeCover from "./components/HomeCover.vue"
 import HomeTopSellers from "./components/HomeTopSellers.vue"
 import HomeHotBids from "./components/HomeHotBids.vue"
+import AppFooter from "./components/AppFooter.vue"
 export default {
   name: "App",
   components: {
     AppHeader,
     HomeCover,
     HomeTopSellers,
-    HomeHotBids
+    HomeHotBids,
+    AppFooter
   },
   data() {
     return {

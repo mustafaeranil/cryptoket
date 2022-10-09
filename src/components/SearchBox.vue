@@ -1,8 +1,7 @@
 <template>
   <div class="search-box">
     <SvgIcon name="search" class="search-box__icon" />
-    <input
-      type="text"
+    <AppTextbox
       :value="value"
       :placeholder="placeholder"
       :disabled="disabled"
@@ -15,10 +14,12 @@
 
 <script>
 import SvgIcon from "./SvgIcon.vue"
+import AppTextbox from "./AppTextbox.vue"
 export default {
   name: "SearchBox",
   components: {
-    SvgIcon
+    SvgIcon,
+    AppTextbox
   },
   props: {
     value: {
@@ -46,7 +47,7 @@ export default {
   }
 
   &__input {
-    @apply h-full w-full rounded-lg border border-grey-100 pl-12 text-[0.625rem] outline-none placeholder:text-grey-200 dark:border-dark-200 dark:bg-dark-200 dark:placeholder:text-white;
+    @apply h-full w-full pl-12;
   }
 }
 </style>

@@ -25,7 +25,7 @@ export default {
 
 <style lang="postcss">
 .app-button {
-  @apply rounded-xl px-7 py-2 text-center text-sm font-semibold;
+  @apply whitespace-nowrap rounded-xl px-7 py-2 text-center text-sm font-semibold;
 
   &__filled {
     @apply bg-gradient-to-r from-primary-200 to-primary-300 text-white;

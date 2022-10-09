@@ -3,12 +3,21 @@
     <div class="app-logo__icon">
       <div class="app-logo__circle"></div>
     </div>
-    <div class="app-logo__name">CryptoKet</div>
+    <div :class="['app-logo__name', showTextOnMobile ? '' : 'hidden']">
+      CryptoKet
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    showTextOnMobile: {
+      type: Boolean,
+      default: false
+    }
+  }
+}
 </script>
 
 <style lang="postcss">
@@ -16,7 +25,7 @@ export default {}
   @apply flex items-center;
 
   &__icon {
-    @apply flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-r from-primary-200 to-primary-300 lg:mr-1;
+    @apply flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-r from-primary-200 to-primary-300;
   }
 
   &__circle {
@@ -24,7 +33,7 @@ export default {}
   }
 
   &__name {
-    @apply hidden font-gotham text-lg font-bold text-dark-200 dark:text-white lg:block;
+    @apply ml-1 font-gotham text-lg font-bold text-dark-200 dark:text-white lg:block;
   }
 }
 </style>
