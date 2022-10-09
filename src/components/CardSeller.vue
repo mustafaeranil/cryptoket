@@ -60,7 +60,7 @@ export default {
 
 <style lang="postcss">
 .card-seller {
-  @apply relative inline-flex flex-col items-center rounded-2.5xl border border-grey-100 px-12 pt-11 pb-5 dark:border-dark-300 dark:bg-dark-300;
+  @apply relative inline-flex flex-col items-center rounded-2.5xl border border-grey-100 px-7 pt-11 pb-5 dark:border-dark-300 dark:bg-dark-300 lg:px-12;
 
   &__order {
     @apply absolute left-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-primary-100 text-white;
