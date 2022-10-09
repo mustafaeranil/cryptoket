@@ -7,7 +7,9 @@
       <div class="card-seller__pic">
         <img v-if="picture" :src="picture" :alt="name" />
       </div>
-      <div class="card-seller__check"></div>
+      <div v-if="online" class="card-seller__check">
+        <SvgIcon name="check" class="text-white" />
+      </div>
     </div>
     <div class="card-seller__name">
       {{ name }}
@@ -20,8 +22,13 @@
 </template>
 
 <script>
+import SvgIcon from "./SvgIcon.vue"
+
 export default {
   name: "CardSeller",
+  components: {
+    SvgIcon
+  },
   props: {
     order: {
       type: Number,
@@ -42,6 +49,10 @@ export default {
     currency: {
       type: String,
       default: ""
+    },
+    online: {
+      type: Boolean,
+      default: true
     }
   }
 }
@@ -64,7 +75,7 @@ export default {
   }
 
   &__check {
-    @apply absolute bottom-0 right-1 h-4 w-4 rounded-full bg-green-500;
+    @apply absolute bottom-0 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-green-500;
   }
 
   &__name {
