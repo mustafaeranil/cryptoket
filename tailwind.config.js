@@ -23,6 +23,9 @@ module.exports = {
       },
       borderRadius: {
         "2.5xl": "20px"
+      },
+      fontFamily: {
+        gotham: ["Gotham", "sans-serif"]
       }
     }
   },
