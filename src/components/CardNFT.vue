@@ -1,6 +1,8 @@
 <template>
   <div class="card-nft">
-    <div class="card-nft__pic"></div>
+    <div class="card-nft__pic">
+      <img v-if="image" :src="image" :alt="name" />
+    </div>
     <div class="card-nft__name">
       {{ name }}
     </div>
@@ -38,6 +40,10 @@ export default {
     favs: {
       type: Number,
       default: 0
+    },
+    image: {
+      type: String,
+      default: ""
     }
   }
 }
@@ -45,10 +51,14 @@ export default {
 
 <style lang="postcss">
 .card-nft {
-  @apply inline-flex flex-col rounded-lg p-3 pb-5 shadow-lg dark:bg-dark-300 dark:shadow-none lg:rounded-2.5xl;
+  @apply relative inline-flex flex-col rounded-lg p-3 pb-5 shadow-lg dark:bg-dark-300 dark:shadow-none lg:rounded-2.5xl;
 
   &__pic {
-    @apply mb-4 h-36 w-full rounded-lg bg-grey-100 lg:h-56 lg:rounded-2.5xl;
+    @apply relative mb-4 h-36 w-full overflow-hidden rounded-lg bg-grey-100 lg:h-56 lg:rounded-2.5xl;
+
+    & img {
+      @apply absolute left-1/2 top-1/2 h-full w-auto max-w-none -translate-x-1/2 -translate-y-1/2 transform;
+    }
   }
 
   &__name {
@@ -60,7 +70,7 @@ export default {
   }
 
   &__price {
-    @apply text-xs text-dark-200 dark:text-white;
+    @apply text-xs text-dark-200 dark:text-white lg:text-sm;
   }
 
   &__fav {

@@ -176,6 +176,10 @@ export default {
 
   &__social {
     @apply flex justify-center gap-5 lg:justify-end;
+
+    &-item {
+      @apply text-dark-200 dark:text-white;
+    }
   }
 }
 

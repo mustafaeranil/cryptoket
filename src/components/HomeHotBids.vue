@@ -7,7 +7,8 @@
         :currency="currency"
         :name="bid.name"
         :price="bid.price"
-        :favs="bid.favs"
+        :favs="bid.fav"
+        :image="bid.image"
       />
     </div>
     <AppButton

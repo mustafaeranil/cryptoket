@@ -60,14 +60,14 @@ export default {
 
 <style lang="postcss">
 .card-seller {
-  @apply relative inline-flex flex-col items-center rounded-2.5xl border border-grey-100 px-7 pt-11 pb-5 dark:border-dark-300 dark:bg-dark-300 lg:px-12;
+  @apply relative inline-flex flex-col items-center rounded-2.5xl border border-grey-100 pt-8 pb-2 dark:border-dark-300 dark:bg-dark-300 lg:px-12 lg:pt-11 lg:pb-5;
 
   &__order {
-    @apply absolute left-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-primary-100 text-white;
+    @apply absolute left-3 top-3 flex h-6 w-6 items-center justify-center rounded-full bg-primary-100 text-sm text-white lg:h-8 lg:w-8 lg:text-base;
   }
 
   &__pic-container {
-    @apply relative mb-1.5;
+    @apply relative mx-7 mb-1.5;
   }
 
   &__pic {
@@ -79,11 +79,11 @@ export default {
   }
 
   &__name {
-    @apply text-center font-semibold text-dark-200 dark:text-white;
+    @apply max-w-full px-2 text-center text-sm font-semibold text-dark-200 dark:text-white lg:text-base;
   }
 
   &__sales {
-    @apply text-dark-200 dark:text-white;
+    @apply text-sm text-dark-200 dark:text-white lg:text-base;
   }
 }
 </style>

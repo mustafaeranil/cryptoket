@@ -1,5 +1,5 @@
 <template>
-  <div v-if="sellers.length" class="swiper top-sellers" ref="swiperEl">
+  <div class="swiper top-sellers" ref="swiperEl">
     <div class="swiper-wrapper">
       <div
         class="swiper-slide"
@@ -8,10 +8,10 @@
       >
         <CardSeller
           :name="seller.name"
-          :sales="seller.sales"
+          :sales="seller.price"
           :order="index + 1"
           :currency="currency"
-          :picture="seller.picture"
+          :picture="seller.avatar"
         />
       </div>
     </div>
@@ -56,21 +56,28 @@ export default {
       swiper: null
     }
   },
-  mounted() {
-    this.swiper = new Swiper(".swiper", {
-      spaceBetween: 10,
-      slidesPerView: "auto",
-      navigation: {
-        nextEl: ".top-sellers__button--next",
-        prevEl: ".top-sellers__button--prev",
-        disabledClass: "top-sellers__button--disabled"
+  watch: {
+    sellers: {
+      handler() {
+        console.log("test")
+        this.swiper = new Swiper(".swiper", {
+          spaceBetween: 10,
+          slidesPerView: "auto",
+          navigation: {
+            nextEl: ".top-sellers__button--next",
+            prevEl: ".top-sellers__button--prev",
+            disabledClass: "top-sellers__button--disabled"
+          },
+          breakpoints: {
+            1024: {
+              spaceBetween: 22
+            }
+          }
+        })
       },
-      breakpoints: {
-        1024: {
-          spaceBetween: 22
-        }
-      }
-    })
+      deep: true,
+      immediate: true
+    }
   }
 }
 </script>
